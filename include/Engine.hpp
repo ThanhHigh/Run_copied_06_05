@@ -50,7 +50,8 @@ public:
         return s_Instance = (s_Instance != nullptr) ? s_Instance : new Engine();
     }
 
-    TTF_Font* m_MenuStartGameFont;
+    TTF_Font* m_MenuStartGameFont = nullptr;
+    TTF_Font* m_GameOverFont = nullptr;
 private:
     Engine(){}
 

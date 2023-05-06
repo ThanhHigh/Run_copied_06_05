@@ -71,6 +71,11 @@ bool Engine::initGame()
         {
             std::cout << "Failed to load lazy font! SDL_ttf Error" << TTF_GetError() << std::endl;
         }
+        // m_GameOverFont = TTF_OpenFont("res/HK_font.ttf", 35);
+        // if (m_GameOverFont == nullptr)
+        // {
+        //     std::cout << "Failed to load lazy font! SDL_ttf Error" << TTF_GetError() << std::endl;
+        // }
     }
 
     //Map
@@ -196,9 +201,12 @@ void Engine::clearGame()
     SDL_DestroyWindow(m_Window);
     m_Window = nullptr;
 
+    m_MenuStartGameFont = nullptr;
+    m_GameOverFont = nullptr;
+    TTF_Quit();
     IMG_Quit();
     SDL_Quit();
-    TTF_Quit();
+
 }
 
 
